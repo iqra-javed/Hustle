@@ -27,5 +27,5 @@ class Application(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
 
 
-class User_Application(Application):
+class UserApplication(Application):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
