@@ -7,11 +7,11 @@ class Application(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     company = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
-    point_of_contact_name = models.CharField(max_length=100)
-    point_of_contact_number = models.PositiveIntegerField()
-    point_of_contact_email = models.EmailField(max_length=100)
-    source_of_job = models.CharField(max_length=255)
-    link_to_job_posting = models.URLField()
+    point_of_contact_name = models.CharField(blank=True, max_length=100)
+    point_of_contact_number = models.PositiveIntegerField(blank=True)
+    point_of_contact_email = models.EmailField(blank=True, max_length=100)
+    source_of_job = models.CharField(blank=True, max_length=255)
+    link_to_job_posting = models.URLField(blank=True)
     notes = models.TextField(blank=True)
     TIMELINE_CHOICES = (
         ('Submitted Job Application', 'Submitted Job Application'),
