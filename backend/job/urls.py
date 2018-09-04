@@ -18,6 +18,8 @@ from django.urls import path, include, re_path
 from rest_framework import routers
 from rest_framework.authtoken import views 
 from application.api import UserApplicationViewSet
+from .views import home
+from  application.views import login_view, register_view, logout_view
 
 router = routers.DefaultRouter()
 router.register('applications', UserApplicationViewSet)
@@ -26,4 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     re_path('api-token-auth/', views.obtain_auth_token),
+    path('', home),
+    path('accounts/login/', login_view),
+    path('accounts/register/', register_view),
+    path('accounts/logout/', logout_view)
 ]
