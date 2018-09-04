@@ -13,15 +13,6 @@ class Application(models.Model):
     source_of_job = models.CharField(blank=True, max_length=255)
     link_to_job_posting = models.URLField(blank=True)
     notes = models.TextField(blank=True)
-    TIMELINE_CHOICES = (
-        ('Submitted Job Application', 'Submitted Job Application'),
-        ('Whiteboarding', 'Whiteboarding'),
-        ('Code Test', 'Code Test'),
-        ('On-Site Interview', 'On-Site Interview'),
-        ('Received Response', 'Received Response'),
-        ('Phone Interview', 'Phone Interview'),
-    )
-    timeline = MultiSelectField(choices=TIMELINE_CHOICES)
     heart_it = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)

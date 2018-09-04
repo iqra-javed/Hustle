@@ -2,6 +2,7 @@ from rest_framework import serializers, viewsets
 from .models import Application, UserApplication
 
 
+
 class UserApplicationSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
@@ -15,7 +16,6 @@ class UserApplicationSerializer(serializers.HyperlinkedModelSerializer):
             'source_of_job',
             'link_to_job_posting',
             'notes',
-            'timeline',
             )
     
     def create(self, validated_data):
