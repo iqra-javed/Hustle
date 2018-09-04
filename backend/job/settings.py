@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'application',
     'multiselectfield',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
