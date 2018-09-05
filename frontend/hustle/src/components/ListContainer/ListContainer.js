@@ -5,8 +5,11 @@ import './ListContainer.css';
 class ListContainer extends Component {
 
     state = {
-        listNames: ['Wishlist', 'Applied', 'Phone', 'On Site', 'Offer', 'Rejected']
+        listNames: ['Wishlist', 'Applied', 'Phone', 'On Site', 'Offer', 'Rejected'],
+        jobApps: []
     }
+
+    
     render() {
         return (
             <div className="list-container">
