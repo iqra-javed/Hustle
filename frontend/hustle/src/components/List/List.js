@@ -10,6 +10,10 @@ class List extends Component {
         jobApps: []
     }
 
+    componentDidMount() {
+        
+    }
+
     render(props) {
         return (
             <div className="list">
