@@ -1,0 +1,7 @@
+.nav-toolbar {
+    justify-content: space-between;
+}
+
+.logout-btn:hover {
+    background-color:#344387 !important;
+}
