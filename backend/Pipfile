@@ -9,6 +9,7 @@ djangorestframework = "*"
 django-multiselectfield = "*"
 python-decouple = "*"
 dj-database-url = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
