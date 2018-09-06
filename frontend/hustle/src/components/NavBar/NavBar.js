@@ -15,6 +15,7 @@ const NavBar = (props) => {
               color="inherit" 
               variant='contained' 
               className='logout-btn'
+              size="medium"
               >Logout
             </Button>
           </Toolbar>

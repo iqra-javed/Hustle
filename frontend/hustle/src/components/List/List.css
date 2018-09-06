@@ -27,3 +27,41 @@
 .add-btn:hover {
     background-color: rgb(114, 114, 114);
 }
+
+.form-title {
+    margin-bottom: 20px !important;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    flex-wrap: wrap;
+    height: 80%;
+}
+
+.input-title {
+    margin-top: 12px !important;
+}
+
+.card-input {
+    margin: 10px 0px;
+    width: 30%;
+    height: 5%;
+    border-radius: 1%;
+}
+
+.card-textarea {
+    margin: 10px 0px;
+    width: 40%;
+    height: 20%;
+}
+
+.submit-btn {
+    width: 100px;
+    margin-left: 42% !important;
+}
+
+.submit-btn:hover {
+    background-color:#344387 !important;
+}

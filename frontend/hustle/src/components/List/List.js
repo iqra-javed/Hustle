@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-
-import './List.css';
-import Card from '../Card/Card';
-
-
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 
+import './List.css';
+import Card from '../Card/Card';
 
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-  }
+
+
   
   function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
+    const top = 70; 
+    const left = 60; 
   
     return {
       top: `${top}%`,
@@ -27,13 +23,16 @@ function rand() {
   
   const styles = theme => ({
     paper: {
+      flexDirection: 'column',
       position: 'absolute',
-      width: theme.spacing.unit * 50,
+      width: '60%',
+      height: '60%',
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[5],
       padding: theme.spacing.unit * 4,
     },
   });
+
   
 class List extends Component {
 
@@ -55,8 +54,6 @@ class List extends Component {
 
         return (
             <div className="list">
-                {/* <Typography gutterBottom>Click to get the full Modal experience!</Typography> */}
-                {/* <Button onClick={this.handleOpen}>Open Modal</Button> */}
                 <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
@@ -64,21 +61,50 @@ class List extends Component {
                     onClose={this.handleClose}
                     >
                     <div style={getModalStyle()} className={classes.paper}>
-                        <Typography variant="title" id="modal-title">
-                            Text in a modal
+                        <Typography className="form-title" variant="display2" align="center" id="modal-title">
+                        New Application Info 
                         </Typography>
-                        <Typography variant="subheading" id="simple-modal-description">
-                            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </Typography>
+                        <div className="form-fields">
+                            <Typography className="input-title" variant="title">
+                            Company Name: 
+                            </Typography>
+                            <input className="card-input" name="company" type="text" placeholder="company name"></input>
+                            <Typography className="input-title" variant="title">
+                            Position: 
+                            </Typography>
+                            <input className="card-input" name="position" type="text" placeholder="position"></input>
+                            <Typography className="input-title" variant="title">
+                            Point of Contact Name: 
+                            </Typography>
+                            <input className="card-input" name="poc name" type="text" placeholder="point of contact name"></input>
+                            <Typography className="input-title" variant="title">
+                            Point of Contact Number: 
+                            </Typography>
+                            <input className="card-input" name="poc number" type="text" placeholder="point of contact number"></input>
+                            <Typography className="input-title" variant="title">
+                            Point of Contact Email: 
+                            </Typography>
+                            <input className="card-input" name="poc email" type="text" placeholder="point of contact email"></input>
+                            <Typography className="input-title" variant="title">
+                            Source of Job: 
+                            </Typography>
+                            <input className="card-input" name="source" type="text" placeholder="e.g. Indeed, Monster, LinkedIn "></input>
+                            <Typography className="input-title" variant="title">
+                            Link to Job Posting: 
+                            </Typography>
+                            <input className="card-input" name="url" type="text" placeholder="url"></input>
+                            <Typography className="input-title" variant="title">
+                            Notes: 
+                            </Typography>
+                            <textarea className="card-textarea" name="notes" type="text" placeholder="notes..."></textarea>
+                        </div>
                         <Button
-                            style={{ fontSize: '1.5rem', backgroundColor: '#5c75e6' }} 
-                            color="inherit" 
+                            style={{ fontSize: '1.5rem', backgroundColor: '#5c75e6', color: '#FFFFF9' }} 
                             variant='contained' 
-                            className='logout-btn'
-                            size='small'
+                            className='submit-btn'
+                            size="medium"
                             >Submit
                         </Button>
-                        {/* <SimpleModalWrapped /> */}
                     </div>
                 </Modal>
                 <div className='list-name'>{this.props.listName}</div>
@@ -90,8 +116,5 @@ class List extends Component {
     }
 }
 
-// const SimpleModalWrapped = withStyles(styles)(List);
-
-// export default SimpleModalWrapped;
 
 export default withStyles(styles)(List)
